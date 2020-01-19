@@ -5,27 +5,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Snake implements ActionListener {
 
     public JFrame jframe;
-
     public RenderPanel renderPanel;
-
     public Timer timer = new Timer(20, this);
-
     public static Snake snake;
-
     public ArrayList<Point> snakeParts = new ArrayList<Point>();
-
-    public static final int UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3;
-
+    public static final int UP = 0, DOWN = 1, LEFT = 2, RIGHT = 3, SCALE = 10;
     public int ticks = 0, direction = DOWN;
-
-    public Point head;
+    public Point head, cherry;
+    public Random random;
+    public boolean over = false;
+    public Dimension dim;
+    public int score;
 
     public Snake() {
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        dim = Toolkit.getDefaultToolkit().getScreenSize();
         jframe = new JFrame("Snake");
         jframe.setVisible(true);
         jframe.setSize(600, 600);
@@ -34,6 +32,8 @@ public class Snake implements ActionListener {
         jframe.add(renderPanel = new RenderPanel());
         jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         head = new Point(0, 0);
+        random = new Random();
+        cherry = new Point(dim.width / SCALE, dim.height / SCALE);
         timer.start();
     }
 
@@ -42,16 +42,38 @@ public class Snake implements ActionListener {
         renderPanel.repaint();
         ticks++;
 
-        if (ticks % 10 == 0) {
+        if (ticks % 10 == 0 && head != null && !over) {
             if (direction == UP)
-            snakeParts.add(new Point(head.x, head.y - 1));
+                if (head.y - 1 > 0)
+                    snakeParts.add(new Point(head.x, head.y - 1));
+                else
+                    over = true;
             if (direction == DOWN)
-            snakeParts.add(new Point(head.x, head.y + 1));
+                if (head.y + 1 < dim.height / SCALE)
+                    snakeParts.add(new Point(head.x, head.y + 1));
+                else
+                    over = true;
             if (direction == LEFT)
-            snakeParts.add(new Point(head.x - 1, head.y));
+                if (head.x - 1 > 0)
+                    snakeParts.add(new Point(head.x - 1, head.y));
+                else
+                    over = true;
             if (direction == RIGHT)
-            snakeParts.add(new Point(head.x  + 1, head.y));
+                if (head.y + 1 < dim.width / SCALE)
+                    snakeParts.add(new Point(head.x + 1, head.y));
+                else
+                    over = true;
+            if (cherry != null) {
+                if (head.equals(cherry)) {
+                    score++;
+                    cherry.setLocation(dim.width / SCALE, dim.height / SCALE);
+
+                }
+
+            }
+
         }
+
     }
 
     public static void main(String[] args) {
