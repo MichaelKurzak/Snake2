@@ -1,7 +1,7 @@
-tytuł 
+
 # Snake2 - game
-śródtytuły
-## Simple game created ehit Java
+
+## Simple game created whit Java lang
 ### snake game written with the help of the youtube tutorial for the JAVA course.
 
 Wprowadzenie – cel projektu
