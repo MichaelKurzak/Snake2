@@ -1,1 +1,18 @@
-# Snake2
+tytuł 
+# Snake2 - game
+śródtytuły
+## Simple game created ehit Java
+### snake game written with the help of the youtube tutorial for the JAVA course.
+
+Wprowadzenie – cel projektu
+Technologie
+Uruchomienie
+Rozważ też dodanie elementów takich jak:
+
+Spis treści
+Ilustracje
+Zakres funkcjonalności
+Przykłady użycia
+Status projektu
+Źródła
+Inne informacje
