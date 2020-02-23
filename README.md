@@ -9,3 +9,10 @@ JFrame <br >
 AWT <br >
 Swing <br >
 
+Zakres projektu (CV, github)
+Techniczny opis projektu (CV, github)
+- architektura
+- wykorzystane technologie
+- wykorzystane wzorce projektowe
+3.       Link do repozytorium (tylko w CV)
+4.       Zakres odpowiedzialności w projekcie (tylko w CV)
