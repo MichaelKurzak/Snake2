@@ -15,5 +15,5 @@ Making a simple game in JAVA
 - AWT  <br >
 - Swing  <br >
 
-## design patterns used
+## Design patterns used
 - Model-View-Controller
