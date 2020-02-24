@@ -9,11 +9,11 @@ Making a simple game in JAVA
 - Creating the user interface.<br >
 - Creating a logical layer.
 
-## Technologies used
+### Technologies used
 - Maven  <br > 
 - JFrame  <br > 
 - AWT  <br >
 - Swing  <br >
 
-## Design patterns used
+### Design patterns used
 - Model-View-Controller
